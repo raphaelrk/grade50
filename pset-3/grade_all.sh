@@ -1,4 +1,6 @@
 #!/bin/bash
+# Created: 9-26-2016
+# Author(s): Raphael Rouvinov-Kats
 
 check() {
     for file in $(find . -type f -name "*$1*.c")

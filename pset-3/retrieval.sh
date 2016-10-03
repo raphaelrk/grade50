@@ -1,4 +1,6 @@
 #!/bin/bash
+# Created: 9-26-2016
+# Author(s): Raphael Rouvinov-Kats
 
 declare -a questions=("find" "fifteen")
 

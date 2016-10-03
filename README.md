@@ -9,6 +9,6 @@ cd grade50
 find . -type f -name "*.sh" -exec chmod 777 {} \;
 ```
 
-- Retrieve problem set submissions with `./retrieval`
-- Grade an individual folder with `./grade`, which'll both output to stdout and to a file called `check50.txt`
-- Grade all the folders in a pset directory at once with `./grade_all`
+- Retrieve problem set submissions with `./retrieval.sh`
+- Grade an individual folder with `./grade.sh`, which'll both output to stdout and to a file called `check50.txt`
+- Grade all the folders in a pset directory at once with `./grade_all.sh`

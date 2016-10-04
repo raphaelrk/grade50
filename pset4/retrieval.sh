@@ -1,4 +1,6 @@
 #!/bin/bash
+# Created: 10-6-2016
+# Author(s): Raphael Rouvinov-Kats
 
 declare -a questions=("whodunit" "resize" "recover")
 

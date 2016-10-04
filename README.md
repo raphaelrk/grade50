@@ -1,5 +1,5 @@
 # Grade50
-Bash scripts to help with the grading of CS50 problem sets.
+Bash scripts to help with the grading of CS50 problem sets. Feel free to PR with alternatives.
 
 # Usage
 

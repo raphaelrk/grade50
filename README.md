@@ -20,7 +20,7 @@ cd pset4
 ./bmp_grade_all.sh # specific to pset 4
 ```
 
-- `./retrieval.sh` retrieves pset submissions and combines them into per-student folders, e.g. some file paths you might get are `grade50/pset4/briansmith/resize.c` `grade50/pset4/briansmith/recover.c`
+- `./retrieval.sh` retrieves pset submissions and combines them into per-student folders, i.e. `grade50/pset4/briansmith/resize.c`, `grade50/pset4/briansmith/recover.c`, etc
 - Grade an individual folder by cd-ing into it and running `../grade.sh`, which'll both output to stdout and to a file called `check50.txt` in the student's folder
 - Grade all the folders in your pset's directory at once with `./grade_all.sh`
 

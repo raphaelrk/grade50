@@ -1,5 +1,5 @@
 # Grade50
-Template bash scripts to help with the grading of CS50 problem sets.
+Bash scripts to help with the grading of CS50 problem sets.
 
 # Usage
 

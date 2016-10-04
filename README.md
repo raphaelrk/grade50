@@ -10,8 +10,8 @@ cd grade50
 find . -type f -name "*.sh" -exec chmod 777 {} \;
 
 # create directory for pset4, retrieve and grade pset4 submissions
-mkdir pset1
-cd pset1
+mkdir pset4
+cd pset4
 ../grade50/pset4/retrieval.sh
 ../grade50/pset4/grade_all.sh
 ```

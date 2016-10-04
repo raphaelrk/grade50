@@ -5,7 +5,7 @@ Template bash scripts to help with the grading of CS50 problem sets.
 ```
 # update ide, clone repo, fix permissions
 update50
-git clone git@github.com:raphaelrk/grade50.git
+git clone https://github.com/raphaelrk/grade50.git
 cd grade50
 find . -type f -name "*.sh" -exec chmod 777 {} \;
 

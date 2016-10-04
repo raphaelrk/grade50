@@ -3,8 +3,7 @@ Template bash scripts to help with the grading of CS50 problem sets.
 
 # Usage
 
-To start using the repo: update ide, clone repo, and fix permissions
-
+Get and set up the repo:
 ```
 update50
 git clone https://github.com/raphaelrk/grade50.git
@@ -12,7 +11,7 @@ cd grade50
 find . -type f -name "*.sh" -exec chmod 777 {} \;
 ```
 
-Using the scripts: create directory for pset4, run scripts to retrieve and grade pset4 submissions
+Use the scripts:
 ```
 cd pset4
 ./retrieval.sh
@@ -20,7 +19,7 @@ cd pset4
 ./bmp_grade_all.sh # specific to pset 4
 ```
 
-Updating the repo:
+Update the repo:
 ```
 update50
 cd grade50

@@ -3,11 +3,13 @@ Template bash scripts to help with the grading of CS50 problem sets.
 
 # Usage
 ```
+# update ide, clone repo, fix permissions
 update50
 git clone git@github.com:raphaelrk/grade50.git
 cd grade50
 find . -type f -name "*.sh" -exec chmod 777 {} \;
 
+# create directory for pset4, retrieve and grade pset4 submissions
 mkdir pset1
 cd pset1
 ../grade50/pset4/retrieval.sh

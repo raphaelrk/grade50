@@ -13,7 +13,7 @@ find . -type f -name "*.sh" -exec chmod 777 {} \;
 cd pset4
 ./retrieval.sh
 ./grade_all.sh
-./bmp_grade_all.sh
+./bmp_grade_all.sh # specific to pset 4
 ```
 
 - Retrieve problem set submissions and combine them into per-student folders with `./retrieval.sh`

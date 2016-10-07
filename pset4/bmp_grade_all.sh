@@ -27,7 +27,7 @@ do
                 ./whodunit ../whodunit-files/clue.bmp out.bmp
                 c9 out.bmp
                 read -p "Does their whodunit decode the clue? " yn
-                $yn > check-whodunit.txt
+                echo "$yn" > check-whodunit.txt
             fi
             
             rm make_bmp_out.txt

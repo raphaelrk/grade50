@@ -33,7 +33,7 @@ leakcheck() {
 
 for  directory in $(find . -maxdepth 1 -type d)
 do
-    if [ "$directory" != "." ] && [ "$directory" != "./speller" ]
+    if [ "$directory" != "." ] && [ "$directory" != "./speller-distro" ]
     then
         echo "<><><><><><><><><><><><><><><><><><><><><><>"
         echo "<><><><><> GRADING $directory <><><><><>"

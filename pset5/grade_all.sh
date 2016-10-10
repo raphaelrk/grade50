@@ -38,8 +38,6 @@ do
         echo "<><><><><><><><><><><><><><><><><><><><><><>"
         echo "<><><><><> GRADING $directory <><><><><>"
         cd "$directory"
-            echo "copying texts and dictionaries to ${PWD##*/}"
-            
             check "DICTIONARY" "2016.speller" "dictionary" "dictionary.h" "Makefile" | tee check50.txt
             leakcheck "DICTIONARY" "./speller" "../speller-distro/dictionaries/large" "../speller-distro/texts/shakespeare.txt" | tee valgrind.txt
         cd ../

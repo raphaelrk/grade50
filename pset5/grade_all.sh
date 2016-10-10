@@ -39,11 +39,9 @@ do
         echo "<><><><><> GRADING $directory <><><><><>"
         cd "$directory"
             echo "copying texts and dictionaries to ${PWD##*/}"
-            cp -R ../speller-distro/texts texts/
-            cp -R ../speller-distro/dictionaries dictionaries/
-
+            
             check "DICTIONARY" "2016.speller" "dictionary" "dictionary.h" "Makefile" | tee check50.txt
-            leakcheck "DICTIONARY" "./speller" "texts/shakespeare.txt" | tee valgrind.txt
+            leakcheck "DICTIONARY" "./speller" "../speller-distro/dictionaries/large" "../speller-distro/texts/shakespeare.txt" | tee valgrind.txt
         cd ../
         echo
     fi

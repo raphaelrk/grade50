@@ -35,8 +35,8 @@ leakcheck() {
 echo "-----------------------------------------------------------------"
 
 echo "copying texts and dictionaries to ${PWD##*/}"
-cp -R ../speller/texts texts/
-cp -R ../speller/dictionaries dictionaries/
+cp -R ../speller-distro/texts texts/
+cp -R ../speller-distro/dictionaries dictionaries/
 
 check "DICTIONARY" "2016.speller" "dictionary" "dictionary.h" "Makefile" | tee check50.txt
 leakcheck "DICTIONARY" "./speller" "texts/shakespeare.txt" | tee valgrind.txt

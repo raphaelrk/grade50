@@ -8,7 +8,7 @@ echo "retrieving, unzipping, renaming speller distro"
 wget https://github.com/cs50/problems/archive/speller.zip &> /dev/null
 unzip speller.zip &> /dev/null
 rm speller.zip &> /dev/null
-mv problems-speller speller &> /dev/null
+mv problems-speller speller-distro &> /dev/null
 
 echo "Done. Now retrieving student submissions."
 

@@ -39,6 +39,8 @@ do
         echo "<><><><><> GRADING $directory <><><><><>"
         cd "$directory"
             check "DICTIONARY" "2016.speller" "dictionary" "dictionary.h" "Makefile" | tee check50.txt
+            sed -i 's/\[[0-9]*[a-zA-Z]/\n/g' check50.txt # hacky fix for absence of newlines
+            
             leakcheck "DICTIONARY" "./speller" "../speller-distro/dictionaries/large" "../speller-distro/texts/shakespeare.txt" | tee valgrind.txt
         cd ../
         echo

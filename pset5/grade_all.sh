@@ -20,7 +20,6 @@ check() {
             result=$(check50 "$2" $4 $5 "${file:2}" | tee /dev/tty)
         done
         
-        echo $result
         echo
     done
 }

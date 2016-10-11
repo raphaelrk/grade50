@@ -27,7 +27,7 @@ check() {
 leakcheck() {
     echo "------------ VALGRIND $1 (${PWD##*/}/${2:2}) ----------"
     make
-    valgrind --leak-check=full "$2" "$3" > /dev/null # only show stderr
+    valgrind --leak-check=full "$2" "$3" "$4" > /dev/null # only show stderr
 }
 
 for  directory in $(find . -maxdepth 1 -type d)

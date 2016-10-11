@@ -27,13 +27,13 @@ check() {
 leakcheck() {
     echo "------------ VALGRIND $1 (${PWD##*/}/${2:2}) ----------"
     make
-    valgrind --leak-check=full "$2" "$3" > /dev/null # only show stderr
+    valgrind --leak-check=full "$2" "$3" "$4" > /dev/null # only show stderr
 }
 
 
 echo "-----------------------------------------------------------------"
 
-check "DICTIONARY" "2016.speller" "dictionary" "dictionary.h" "Makefile" | tee check50.txt
-sed -i 's/\[[0-9]*[a-zA-Z]/\n/g' check50.txt # hacky fix for absence of newlines
+# check "DICTIONARY" "2016.speller" "dictionary" "dictionary.h" "Makefile" | tee check50.txt
+# sed -i 's/\[[0-9]*[a-zA-Z]/\n/g' check50.txt # hacky fix for absence of newlines
 
 leakcheck "DICTIONARY" "./speller" "../speller-distro/dictionaries/large" "../speller-distro/texts/shakespeare.txt" |& tee valgrind.txt

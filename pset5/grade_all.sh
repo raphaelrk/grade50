@@ -2,6 +2,7 @@
 # Created: 10-6-2016
 # Author(s): Raphael Rouvinov-Kats
 
+result=""
 check() {
     # for every file matching <arg3>.c
     for file in $(find . -type f -name "*$3*.c")
@@ -37,7 +38,8 @@ do
         echo "<><><><><><><><><><><><><><><><><><><><><><>"
         echo "<><><><><> GRADING $directory <><><><><>"
         cd "$directory"
-            check "DICTIONARY" "2016.speller" "dictionary" "dictionary.h" "Makefile" | tee check50.txt
+            check "DICTIONARY" "2016.speller" "dictionary" "dictionary.h" "Makefile" 
+            echo result > check50.txt
             sed -i 's/\[[0-9]*[a-zA-Z]/\n/g' check50.txt # hacky fix for absence of newlines
             
             leakcheck "DICTIONARY" "./speller" "../speller-distro/dictionaries/large" "../speller-distro/texts/shakespeare.txt" |& tee valgrind.txt

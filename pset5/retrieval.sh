@@ -1,9 +1,16 @@
 #!/bin/bash
-# Created: 9-26-2016
+# Created: 10-6-2016
 # Author(s): Raphael Rouvinov-Kats
 
-declare -a questions=("find" "fifteen")
+declare -a questions=("speller")
 
+echo "retrieving, unzipping, renaming speller distro"
+wget https://github.com/cs50/problems/archive/speller.zip &> /dev/null
+unzip speller.zip &> /dev/null
+rm speller.zip &> /dev/null
+mv problems-speller speller-distro &> /dev/null
+
+echo "Done. Now retrieving student submissions."
 
 # get github user/pass once, reuse for every submit50 call
 read    -p "Github username: " username
@@ -40,7 +47,6 @@ do
     done
     cd ../
 done
-
 
 # remove ./<question> folders
 echo "cleaning up"

@@ -15,7 +15,7 @@ check() {
         result=$(check50 "$2" $4 $5 "${file:2}" | tee /dev/tty)
         
         # if result doesn't containt sandbox.cs50.net in it,
-        # probably had trouble uploading file -- try again
+        # probably had trouble uploading file -- try again up to ten times
         counter=0
         while [[ $result != *"sandbox.cs50.net"* && $counter -le 10 ]]
         do

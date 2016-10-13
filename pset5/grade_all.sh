@@ -2,6 +2,8 @@
 # Created: 10-6-2016
 # Author(s): Raphael Rouvinov-Kats
 
+result=""
+
 check() {
     # for every file matching <arg3>.c
     for file in $(find . -type f -name "*$3*.c")
@@ -13,13 +15,14 @@ check() {
         result=$(check50 "$2" $4 $5 "${file:2}" | tee /dev/tty)
         
         # if result doesn't containt sandbox.cs50.net in it,
-        # probably had trouble uploading file -- try again
-        while [[ $result != *"sandbox.cs50.net"* ]]
+        # probably had trouble uploading file -- try again up to ten times
+        counter=0
+        while [[ $result != *"sandbox.cs50.net"* && $counter -le 10 ]]
         do
             echo "Trying again..."
             result=$(check50 "$2" $4 $5 "${file:2}" | tee /dev/tty)
+            counter=$counter+1
         done
-        
         echo
     done
 }
@@ -37,7 +40,8 @@ do
         echo "<><><><><><><><><><><><><><><><><><><><><><>"
         echo "<><><><><> GRADING $directory <><><><><>"
         cd "$directory"
-            check "DICTIONARY" "2016.speller" "dictionary" "dictionary.h" "Makefile" | tee check50.txt
+            check "DICTIONARY" "2016.speller" "dictionary" "dictionary.h" "Makefile" 
+            echo $result > check50.txt
             sed -i 's/\[[0-9]*[a-zA-Z]/\n/g' check50.txt # hacky fix for absence of newlines
             
             leakcheck "DICTIONARY" "./speller" "../speller-distro/dictionaries/large" "../speller-distro/texts/shakespeare.txt" |& tee valgrind.txt
